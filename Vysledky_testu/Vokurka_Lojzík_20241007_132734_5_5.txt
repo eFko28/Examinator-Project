@@ -1,0 +1,33 @@
+Vypracoval/a: Lojzík Vokurka
+Otázek v testu: 5
+Výsledná známka: 5
+Procentní úspěšnost: 20.00 %
+Stupnice: {1: (90, 100), 2: (75, 90), 3: (60, 75), 4: (45, 60), 5: (0, 45)}
+Datum a čas vyhodnocení: 07.10.2024, 13:27:34
+
+----------------------
+Chybně zodpovězeno:
+
+Otázka: Co vrátí následující příkaz: print(3 == 3)?
+False, protože dvojité rovnítko není správný porovnávací operátor.
+True, protože porovnání čísel je v Pythonu korektní a rovná se.
+SyntaxError, protože je potřeba použít === pro porovnání.
+True, protože Python vrací vždy ve funkci print hodnotu True.
+
+Otázka: Jakým způsobem se v Pythonu odliší blok řádků kódu, který patří k jedné funkci?
+Všechny řádky jsou odsazeny ideálně o 4 mezery.
+Celý blok je uzavřen do složených závorek.
+Blok je uzavřen do trojitých uvozovek.
+Každý řádek začíná otazníkem.
+
+Otázka: xKterá z následujících možností představuje správnou syntaxi pro definici funkce v Pythonu?
+function my_function() {}
+def my_function():
+fun my_function():
+definice funkce my_function():
+
+Otázka: Který z následujících příkazů vytvoří řetězec v Pythonu?
+Hello, World!
+'Hello, World!'
+["Hello", "World"]
+12345

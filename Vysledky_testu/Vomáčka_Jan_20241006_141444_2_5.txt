@@ -1,0 +1,21 @@
+Vypracoval/a: Jan Vomáčka
+Otázek v testu: 2
+Výsledná známka: 5
+Procentní úspěšnost: 0.00 %
+Stupnice: {1: (90, 100), 2: (75, 90), 3: (60, 75), 4: (45, 60), 5: (0, 45)}
+Datum a čas vyhodnocení: 06.10.2024, 14:14:44
+
+----------------------
+Chybně zodpovězeno:
+
+Otázka: Jakým způsobem definujeme seznam v Pythonu?
+Použitím složených závorek: {1, 2, 3}
+Použitím hranatých závorek: [1, 2, 3]
+Použitím kulatých závorek: (1, 2, 3)
+Pomocí příkazu create list
+
+Otázka: xJakým způsobem definujeme seznam v Pythonu?
+Použitím složených závorek: {1, 2, 3}
+Použitím kulatých závorek: (1, 2, 3)
+Použitím hranatých závorek: [1, 2, 3]
+Pomocí příkazu create list

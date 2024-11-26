@@ -1,0 +1,21 @@
+Vypracoval/a: Ladik Ladule
+Otázek v testu: 3
+Výsledná známka: 5
+Procentní úspěšnost: 33.33 %
+Stupnice: {1: (90, 100), 2: (75, 90), 3: (60, 75), 4: (45, 60), 5: (0, 45)}
+Datum a čas vyhodnocení: 21.11.2024, 12:15:00
+
+----------------------
+Chybně zodpovězeno:
+
+Otázka: Co se stane při pokusu o změnu prvku v n-tici (tuple)? Například my_tuple[0] = 10.
+Python automaticky vytvoří kopii n-tice.
+Python vyvolá chybu, protože n-tice jsou neměnné (immutable).
+Prvek v n-tici bude změněn na novou hodnotu.
+Python přepíše n-tici bez chybové hlášky.
+
+Otázka: Jakým způsobem se v Pythonu odliší blok řádků kódu, který patří k jedné funkci?
+Každý řádek začíná otazníkem.
+Všechny řádky jsou odsazeny ideálně o 4 mezery.
+Celý blok je uzavřen do složených závorek.
+Blok je uzavřen do trojitých uvozovek.

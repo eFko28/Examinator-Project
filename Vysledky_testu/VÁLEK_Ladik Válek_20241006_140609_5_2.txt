@@ -1,0 +1,15 @@
+Vypracoval/a: Ladik Válek VÁLEK
+Otázek v testu: 5
+Výsledná známka: 2
+Procentní úspěšnost: 80.00 %
+Stupnice: {1: (90, 100), 2: (75, 90), 3: (60, 75), 4: (45, 60), 5: (0, 45)}
+Datum a čas vyhodnocení: 06.10.2024, 14:06:09
+
+----------------------
+Chybně zodpovězeno:
+
+Otázka: Co se stane při použití příkazu my_list.append(10)?
+Do seznamu bude vloženo číslo 10 na první pozici.
+Do seznamu bude přidán prvek 10 na jeho konec.
+Seznam bude zkopírován a číslo 10 bude přidáno do nové kopie.
+Python vyvolá chybu, protože pro přidání prvku je potřeba použít add().

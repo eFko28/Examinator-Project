@@ -1,5 +1,6 @@
-# Prg24-26_Project_01_Examinator_app
-
+# -*- coding: utf-8 -*-
+# Příliš žluťoučký kůň úpěl ďábelské ódy - testovací pangram
+"""_summary_
 Project_01_Examinator_app.py
 
 * Vytvořte terminálovou aplikaci, která bude čerpat otázky ze souborů z definovaného adresáře.
@@ -85,45 +86,120 @@ Počet otázek v souboru bude minimálně 20. Lze jakkoliv využít cokoliv, ka�
         0; Použitím kulatých závorek: (1, 2, 3) 
         0; Použitím složených závorek: {1, 2, 3} 
         0; Pomocí příkazu create list
+"""
 
 
-        Otázka: Jak lze v Pythonu získat délku seznamu my_list? 
-        1; Použitím funkce len(my_list) 
-        0; Použitím funkce size(my_list) 
-        0; Použitím metody my_list.length() 
-        0; Pomocí příkazu list_size(my_list)
+import os
+import random
+import time
+from datetime import datetime
 
 
-        Otázka: Co vrátí následující příkaz: print(3 == 3)? 
-        0; True, protože Python vrací vždy ve funkci print hodnotu True. 
-        1; True, protože porovnání čísel je v Pythonu korektní a rovná se. 
-        0; False, protože dvojité rovnítko není správný porovnávací operátor. 
-        0; SyntaxError, protože je potřeba použít === pro porovnání.
+##############################################################
+# Globální konstanty a proměnné
+
+GRADE_THRESHOLDS
 
 
-        Otázka: Co se stane při pokusu o změnu prvku v n-tici (tuple)? Například my_tuple[0] = 10. 
-        0; Prvek v n-tici bude změněn na novou hodnotu. 
-        0; Python přepíše n-tici bez chybové hlášky. 
-        0; Python automaticky vytvoří kopii n-tice. 
-        1; Python vyvolá chybu, protože n-tice jsou neměnné (immutable).
 
 
-        Otázka: Jakým způsobem lze importovat modul math a použít funkci sqrt pro výpočet druhé odmocniny v Pythonu? 
-        1; import math; math.sqrt(16) 
-        0; from sqrt import math(); sqrt(16) 
-        0; import sqrt.math from math; sqrt(16) 
-        0; include math.sqrt(16)
+##############################################################
+def load_questions_from_directory(directory):
+    """Načtení všech otázek z textových souborů v zadaném adresáři.
+    Args:
+        directory: str, cesta k adresáři s otázkami.
+    Returns:
+        list, seznam všech otázek načtených ze souborů.
+    """
 
 
-        Otázka: Který z následujících příkazů vytvoří řetězec v Pythonu? 
-        1; 'Hello, World!' 
-        0; Hello, World! 
-        0; 12345 
-        0; ["Hello", "World"]
+##############################################################
+def parse_questions(content, author, filename):
+    """Parses the content of a file with questions into a list of dictionaries.
+    Args:
+        content: str, obsah souboru s otázkami.
+        author: str, jméno autora otázek.
+        filename: str, název souboru.
+    Returns:
+        list, seznam otázek ve formě slovníku.
+    """
 
 
-        Otázka: Co se stane při použití příkazu my_list.append(10)? 
-        0; Do seznamu bude vloženo číslo 10 na první pozici. 
-        1; Do seznamu bude přidán prvek 10 na jeho konec. 
-        0; Seznam bude zkopírován a číslo 10 bude přidáno do nové kopie. 
-        0; Python vyvolá chybu, protože pro přidání prvku je potřeba použít add().
+##############################################################
+def shuffle_answers(question):
+    """Zamíchá odpovědi u zadané otázky.
+    Args:
+        question: dict, jedna otázka se správnou odpovědí.
+    Returns:
+        dict, otázka se zamíchanými odpověďmi.
+    """
+
+
+##############################################################
+def get_user_name():
+    """Získá jméno a příjmení zadané uživatelem."""
+
+
+##############################################################
+def get_number_of_questions(total_questions):
+    """Získá od uživatele počet otázek, které chce mít v testu.
+    Args:
+        total_questions: int, maximální počet dostupných otázek.
+    Returns:
+        int, počet otázek pro test.
+    """
+
+
+##############################################################
+def ask_question(question, index):
+    """Zobrazí otázku a odpovědi uživateli, získá jeho odpověď.
+    Args:
+        question: dict, otázka se zamíchanými odpověďmi.
+        index: int, pořadí otázky.
+    Returns:
+        bool, True pokud uživatel odpověděl správně, jinak False.
+    """
+
+
+##############################################################
+def calculate_grade(score, total_questions):
+    """Vypočítá výslednou známku podle procentní úspěšnosti.
+    Args:
+        score: int, počet správných odpovědí.
+        total_questions: int, celkový počet otázek v testu.
+    Returns:
+        int, výsledná známka.
+    """
+
+
+##############################################################
+def save_test_result(first_name, last_name, total_questions, score, grade, success_rate, wrong_answers):
+    """Uloží výsledek testu do souboru v zadaném formátu.
+    Args:
+        first_name: str, jméno uživatele.
+        last_name: str, příjmení uživatele.
+        total_questions: int, celkový počet otázek.
+        score: int, počet správných odpovědí.
+        grade: int, výsledná známka.
+        success_rate: float, procentní úspěšnost.
+        wrong_answers: list, seznam nesprávně zodpovězených otázek.
+    """
+
+
+##############################################################
+def run_test():
+    """Hlavní funkce, která řídí průběh testu."""
+
+
+##############################################################
+### Spuštění programu - MAIN
+
+if __name__ == "__main__":
+
+    os.system('clear' if os.name == 'posix' else 'cls')
+
+    while True:
+        run_test()
+        repeat = input("Chcete test zopakovat? (a/n): ").lower()
+        if repeat != "a":
+            break

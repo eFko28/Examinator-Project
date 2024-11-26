@@ -1,0 +1,33 @@
+Vypracoval/a: Lojza Adamec
+Otázek v testu: 5
+Výsledná známka: 5
+Procentní úspěšnost: 20.00 %
+Stupnice: {1: (90, 100), 2: (75, 90), 3: (60, 75), 4: (45, 60), 5: (0, 45)}
+Datum a čas vyhodnocení: 06.10.2024, 14:13:28
+
+----------------------
+Chybně zodpovězeno:
+
+Otázka: xJakým způsobem definujeme seznam v Pythonu?
+Použitím kulatých závorek: (1, 2, 3)
+Pomocí příkazu create list
+Použitím složených závorek: {1, 2, 3}
+Použitím hranatých závorek: [1, 2, 3]
+
+Otázka: Jakým způsobem definujeme seznam v Pythonu?
+Použitím složených závorek: {1, 2, 3}
+Pomocí příkazu create list
+Použitím hranatých závorek: [1, 2, 3]
+Použitím kulatých závorek: (1, 2, 3)
+
+Otázka: Který z následujících příkazů vytvoří řetězec v Pythonu?
+Hello, World!
+'Hello, World!'
+["Hello", "World"]
+12345
+
+Otázka: Která z následujících možností představuje správnou syntaxi pro definici funkce v Pythonu?
+fun my_function():
+def my_function():
+definice funkce my_function():
+function my_function() {}

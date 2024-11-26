@@ -1,0 +1,33 @@
+Vypracoval/a: Jonáš Saturanský
+Otázek v testu: 5
+Výsledná známka: 5
+Procentní úspěšnost: 20.00 %
+Stupnice: {1: (90, 100), 2: (75, 90), 3: (60, 75), 4: (45, 60), 5: (0, 45)}
+Datum a čas vyhodnocení: 06.10.2024, 14:16:01
+
+----------------------
+Chybně zodpovězeno:
+
+Otázka: Jakým způsobem definujeme seznam v Pythonu?
+Pomocí příkazu create list
+Použitím složených závorek: {1, 2, 3}
+Použitím kulatých závorek: (1, 2, 3)
+Použitím hranatých závorek: [1, 2, 3]
+
+Otázka: Jakým způsobem lze importovat modul math a použít funkci sqrt pro výpočet druhé odmocniny v Pythonu?
+import sqrt.math from math; sqrt(16)
+import math; math.sqrt(16)
+from sqrt import math(); sqrt(16)
+include math.sqrt(16)
+
+Otázka: Jak lze v Pythonu získat délku seznamu my_list?
+Použitím metody my_list.length()
+Použitím funkce len(my_list)
+Pomocí příkazu list_size(my_list)
+Použitím funkce size(my_list)
+
+Otázka: Co se stane při pokusu o změnu prvku v n-tici (tuple)? Například my_tuple[0] = 10.
+Python automaticky vytvoří kopii n-tice.
+Python vyvolá chybu, protože n-tice jsou neměnné (immutable).
+Python přepíše n-tici bez chybové hlášky.
+Prvek v n-tici bude změněn na novou hodnotu.
