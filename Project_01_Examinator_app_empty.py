@@ -97,7 +97,7 @@ from datetime import datetime
 
 # Globální konstanty a proměnné
 
-GRADE_THRESHHOLDS = {
+GRADE_THRESHOLDS = {
     1: (90, 100),
     2: (75, 90),
     3: (60, 75),
@@ -141,7 +141,62 @@ def parse_questions(content, author, filename):
 
 
 def shuffle_questions(question):
+    answers = question["answers"]
+    correct_answer = question["correct_answer"]
+
+    indices = list(range(len(answers)))
+    random.shuffle(indices)
+
+    new_correct_answer_index = new_answers.index(correct_answer)
+
+    new_answers = [answers[i] for i in indices]
+    new_correct_answer = new_answers[new_correct_answer_index]
+
+    question["answers"] = new_answers
+    question["correct_answer"] = new_correct_answer
+    return question
+
+
+def get_user_name():
+    first_name = input("Zadejte své jméno: ")
+    last_name = input("Zadejte své příjmení: ")
+
+    return first_name, last_name
+
+
+def get_number_of_questions(max_questions):
+    number_of_questions = input(f"S kolika otázkami si přejete pracovat? max({max_questions})")
+    return number_of_questions
+
+
+def ask_question(question, index):
+    os.system("cls")
+
+    print(f"Autor: {question["author"]}, Zdroj: {question["file"]}")
+    print(f"\nOtázka: {question["question"]}")
     
+    for i, answer in enumerate(question["answer"]):
+        print(f"{i + 1}. {answer}")
+
+    while True:
+        try:
+            user_answer = int(input("Zadejte číslo správné odpovědi: ")) - 1
+            if 0 <= user_answer < len(question['answers']):
+                return user_answer == question['correct_answer']
+            else:
+                print(f"Zadejte číslo v rozsahu 1 až {len(question['answers'])}.")
+        except ValueError:
+            print("Prosím zadejte platné číslo.")
+
+def calculate_grade(score, max_questions):
+    percentage = (score / max_questions) * 100
+
+    
+    for mark, threshold in enumerate(GRADE_THRESHOLDS):
+        
+
+
+
 
 
 
