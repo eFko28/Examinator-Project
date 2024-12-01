@@ -192,25 +192,66 @@ def calculate_grade(score, max_questions):
     percentage = (score / max_questions) * 100
 
     
-    for mark, threshold in enumerate(GRADE_THRESHOLDS):
+    for grade, (lower, upper) in GRADE_THRESHOLDS.items():
+        if lower <= percentage < upper:
+            return grade
         
+def save_test_result(first_name, last_name, total_questions, percentage, grade, success_rate, wrong_answers):
+    
 
+    time = datetime.now().strftime("%Y%m%d_%H%M%S")
 
+    filename_result = f"{last_name}_{first_name}_{time}_{total_questions}_{grade}.txt"
+    filepath = os.path.join(RESULTS_FOLDER, filename_result)
 
+    with open(filepath, "w", encoding="utf-8") as file:
+        file.write(f"Vypracoval/a: {first_name} {last_name}")
+        file.write(f"Otázek v testu: {total_questions}")
+        file.write(f"Výsledná známka: {grade}")
+        file.write(f"Procentní úspěšnost: {percentage}")
+        file.write(f"Stupnice: {GRADE_THRESHOLDS}")
+        file.write(f"Datum a čas vyhodnocení: {datetime.now().strftime("%d.%m.%Y, %H:%M:%S")}\n")
 
+    if wrong_answers != "":
+            file.write("\n----------------------\nChybně zodpovězeno:\n")
+            for question in wrong_answers:
+                file.write(f"\nOtázka: {question['question']}\n")
+                for answer in question['answers']:
+                    file.write(f"{answer}\n")
 
+def run_examinator():
+    first_name, last_name = get_user_name()
 
+    questions = load_questions_from_directory(QUESTIONS_FOLDER)
 
+    number_of_questions = get_number_of_questions(len(questions))
 
+    selected_questions = random.sample(questions, number_of_questions)
+    for question in selected_questions:
+        shuffle_questions(question)
 
+    score = 0
+    wrong_answers = []
 
+    
+    for i, question in enumerate(selected_questions):
+        if ask_question(question, i):
+            score += 1
+        else:
+            wrong_answers.append(question)
+    
+    
+    grade, percentage = calculate_grade(score, number_of_questions)
+    
 
+    
+    print("\nTest dokončen!")
+    print(f"Správně: {score}/{number_of_questions}")
+    print(f"Procentní úspěšnost: {round(percentage, 2)}%")
+    print(f"Výsledná známka: {grade}")
 
-
-
-
-
-
+    
+    save_test_result(first_name, last_name, number_of_questions, score, grade, percentage, wrong_answers)
 
 
 ##############################################################
@@ -219,4 +260,10 @@ def calculate_grade(score, max_questions):
 if __name__ == "__main__":
 
     os.system('clear' if os.name == 'posix' else 'cls')
-    examinator_full_app()
+    while True:
+        run_examinator()
+        repeat = input("Chcete test zopakovat? (Y/n): ").lower()
+        if repeat != "y":
+            break
+
+        
