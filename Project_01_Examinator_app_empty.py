@@ -142,19 +142,19 @@ def parse_questions(content, author, filename):
 
 def shuffle_questions(question):
     answers = question["answers"]
-    correct_answer = question["correct_answer"]
+    correct_answer_index = question["correct_answer"]
 
     indices = list(range(len(answers)))
     random.shuffle(indices)
 
-    new_correct_answer_index = new_answers.index(correct_answer)
-
     new_answers = [answers[i] for i in indices]
-    new_correct_answer = new_answers[new_correct_answer_index]
+
+    new_correct_answer_index = indices.index(correct_answer_index)
 
     question["answers"] = new_answers
-    question["correct_answer"] = new_correct_answer
+    question["correct_answer"] = new_correct_answer_index
     return question
+
 
 
 def get_user_name():
@@ -165,8 +165,16 @@ def get_user_name():
 
 
 def get_number_of_questions(max_questions):
-    number_of_questions = input(f"S kolika otázkami si přejete pracovat? max({max_questions})")
-    return number_of_questions
+    while True:
+        try:
+            number_of_questions = int(input(f"S kolika otázkami si přejete pracovat? max({max_questions}): "))
+            if 1 <= number_of_questions <= max_questions:
+                return number_of_questions
+            else:
+                print(f"Zadejte číslo v rozsahu 1 až {max_questions}.")
+        except ValueError:
+            print("Prosím zadejte platné číslo.")
+
 
 
 def ask_question(question, index):
@@ -266,4 +274,3 @@ if __name__ == "__main__":
         if repeat != "y":
             break
 
-        

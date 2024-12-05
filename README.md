@@ -1,129 +1,75 @@
-# Prg24-26_Project_01_Examinator_app
+# Základní soubory pro práci v semináři
 
-Project_01_Examinator_app.py
+První set pro elementární znalosti a jejich zdokonalení.
 
-* Vytvořte terminálovou aplikaci, která bude čerpat otázky ze souborů z definovaného adresáře.
-* Aplikace zatím nebude využívat OOP, resp. třídy a instance.
-* Aplikaci vložíte jméno a příjmení zkoušeného.
-* Aplikaci lze zadat počet otázek, které budou součástí aktuálního testu.
-* Apliace náhodně vybere otázky, zamíchá jejich odpovědi, zobrazí postupně jednu po druhé, vždy smaže terminál, ať netřeba scrollovat.
-* Aplikace vyhodnotí jednotlivé otázky.
-* Na výstupu bude také počet správně a špatně zodpovězených otázek, procentní úspěšnost.
-* Známka dle procentního rozdělení: <100-90>,(90-75>,(75-60>,(60-45>,(45-0>
-* Možnost v kódu nastavit konstanty pro procentní rozdělení a jiné známkování - na jednom místě.
-* Výsledek se vždy uloží do podadresáře "Vysledky_testu" ve tvaru: "prijmeni_jmeno_20241006_132845_pocetOtazek_znamka.txt"
-* Formát souboru viz níže. 
-* Možnost celý test zopakovat s nově vybranými otázkami ze souborů.
-* U každé otázky bude vždy zobrazen autor a název souboru, ze kterého jsme čerpali.
-* Aplikace hlídá vstupy od uživatele, množství otázek ze souboru a množství otázek v testu.
+## 1. Soubory v Pythonu
 
+Mrkni na *.py soubory. Zde by VŽDY měl být postup – nejdříve **EMPTY soubory** se zadáním a nápovědou. Základem jsou jednohvězdičkové úkoly, o které se máte pokoušet nejprve sami (90 % času). Potom s nápovědou z internetu + AI, ale nesklouzávejte k rychlému ústupu a snadné cestě. Bohužel se časem ukáže, že tohle bude spíše na škodu. Na to je vždy dost času i později, teď jde o zažití samotného **programování**, přemýšlení, hledání chyb ve vlastním kódu, vytrvání u kódování, když to zrovna nejde hladce.
 
-## SOUBOR S VÝSLEDKEM TESTU - definice
-    Výsledek se vždy uloží do podadresáře "Vysledky_testu" 
-    Pojmenování souboru bude ve tvaru: "prijmeni_jmeno_20241006_132845_pocetOtazek_znamka.txt"
-    Uvnitř souboru bude vždy stejná struktura a vyhodnocení jednoho pokusu jednoho testu:
+---
 
+## 2. Dokumentace kódu
 
-## SOUBOR S VÝSLEDKEM TESTU - ukázkový soubor "valek_vladislav_20241006_132845_10_2.txt"
-        Vypracoval/a: Vladislav Válek
-        Otázek v testu: 10
-        Výsledná známka: 2
-        Procentní úspěšnost: 80 %
-        Stupnice: <100-90>,(90-75>,(75-60>,(60-45>,(45-0>
-        Datum a čas vyhodnocení: 6.10.2024, 13:25:45
+Ne příliš oblíbená část, někdy přímo prudérní. Přesto na ni trvám a chci, ať ji děláte již od samotných začátků. Má to být **zvyk**, ne hrozba od šéfa. Dodržujte nastavené standardy.
 
-        ----------------------
-        Chybně zodpovězeno:
+Nejčastější pocit programátora je, že ten kód je tak jasný a průzračný, že není co dokumentovat, komentovat. V tom se musí vyznat i **deb..** Schválně se zeptejte všech, co již programují ve větších firmách a v týmech.
 
-        Otázka: Která z následujících možností představuje správnou syntaxi pro definici funkce v Pythonu? 
-        definice funkce my_function(): 
-        function my_function() {} 
-        def my_function(): 
-        fun my_function():
+Ten pocit zná každý, většina už ale přišla i do styku s kódem, který nebyl popsaný (protože je to přeci jasné) a ve kterém se měli vyznat a zorientovat. Samozřejmě se vám to nakonec povede, ale mohlo to být daleko snazší, kdyby byl kód veden a popisován předem. 
 
-        Otázka: Který z následujících příkazů vytvoří řetězec v Pythonu? 
-        'Hello, World!' 
-        Hello, World! 
-        12345 
-        ["Hello", "World"]
-        ----------------------
+---
+
+## 3. Komentáře v kódu
+
+Kromě docstrings rozhodně doporučuji následující - když přidáváte do kódu podmínky, protože něco nefungovalo, je velmi vhodné napsat základní info, proč tohle a tohle přidáváte. Co se tím ošetří a které případy to zachytí. Samozřejmě, když už to píšete, tak je to přeci průzračně jasné a netřeba to ještě komentovat. **Uvidíte.**
+
+Nepodlehněte klamu, kdy znáte svůj kód v okamžiku, kdy jej tvoříte.
+
+---
+
+## 4. Čtení kódu s řešením
+
+Předposledním krokem by mělo být čtení kódu v souboru *.py s řešením. Hned na začátku tvrdím, že rozhodně si nekladu za cíl vytvořit dokonalý kód. Dokonce věřím a doufám, že váš kód bude lepší a čitelnější. Snad nasáváte všechny impulsy jako houba a získáváte cvik, na který já už nemám dost času ani procvičování.
+
+V řešení se naučte číst, dívejte se, co je řešeno jinak, rozšiřte svůj kód, pokud uznáte, že něco z toho je šikovné, že něco jste opomněli, že něco je navíc. Kupodivu i tato část je velmi důležitá, protože budete propojovat svůj kód s někým dalším, provádíte vlastně merge a učíte se hledat, proč to nefunguje vám, ale "jemu" jo.
+
+---
+
+## 5. Úkoly s více hvězdičkami
+
+Úkoly s více hvězdičkami jsou něco jako rozšíření, pokud budete mít chuť a sílu, hledejte řešení sami. Pokud ne, rozhodně stále pro vás platí prostudování kódu v řešení. Někde budou části kódu zakomentované, někde je třeba něco zkusit nebo změnit.
+
+Stále se učíte číst kód. **Cizí kód.** To bude tak 40 % vašeho "programování". Nevěšte hlavu, pokud narazíte na partie, které ještě nemáte "probrány", tak to normálně chodí. Mrkněte na zdroják poprvé, příště zase někde uvidíte podobný kód, časem to bude snazší a snazší, i když dané knihovny nebo obraty ještě neznáte. Netřeba luštit každý detail, něco se časem utřepe samo.
 
 
-## SOUBOR S OTÁZKAMI - definice
-Vždy musíte dodržet PŘESNĚ následující strukturu:
-    Na prvním řádku je vždy uveden autor otázek.
-    Každá otázka má před sebou 2x prázdný řádek.
-    Otázka začíná slovem "Otázka:" a zadáním této otázky.
-    Každá odpověď začíná nulou nebo jedničkou se středníkem a mezerou.
-    Počet odpovědí je vždy 4, přitom je právě jedna z nich správná.
-    Odpovědi ani otázky nejsou číslovány ani označeny písmeny - lze je tedy volně zamíchat, včetně míchání odpovědí.
-    Název souboru s otázkami bude pojmenován dle vzoru: "valek_vladislav_otazky_libovolne_pojmenovani.txt"
-    Bude uložen v podadresáři "Testy_zdroj_otazek"
-Počet otázek v souboru bude minimálně 20. Lze jakkoliv využít cokoliv, každý autor ručí za správnost, nespoléhat se na ...
+# GitHub Workflow
 
+## *Co potřebuji?*
 
-## SOUBOR S OTÁZKAMI - ukázkový soubor "valek_vladislav_otazky_albatros.txt"
-        Autor: Vladislav Válek
+- **Vscode**
+- **Git**
 
+    &emsp;  Jak zjistím, jestli mám git nainstalovaný? Do příkazového řádku *vlož* příkaz:
 
-        Otázka: Jakým způsobem se v Pythonu odliší blok řádků kódu, který patří k jedné funkci?
-        0; Blok je uzavřen do trojitých uvozovek.
-        0; Každý řádek začíná otazníkem.
-        1; Všechny řádky jsou odsazeny ideálně o 4 mezery.
-        0; Celý blok je uzavřen do složených závorek.
+    &emsp;  *`git --version`*
 
+    &emsp;  Pokud se vyhodí ${\color{red}{error}}$ znamená to, že git **není nainstalovaný**.
 
-        Otázka: Která z následujících možností představuje správnou syntaxi pro definici funkce v Pythonu? 
-        0; definice funkce my_function(): 
-        0; function my_function() {} 
-        1; def my_function(): 
-        0; fun my_function():
+## *Jak stáhnout materiály z githubu? Repozitář Shared:*
 
+- **Otevři vscode** a **otevři si složku**, kde chceš soubory z githubu **stáhnout** stisknutím *`Ctrl + K Ctrl + O`*.
 
-        Otázka: Jakým způsobem definujeme seznam v Pythonu? 
-        1; Použitím hranatých závorek: [1, 2, 3] 
-        0; Použitím kulatých závorek: (1, 2, 3) 
-        0; Použitím složených závorek: {1, 2, 3} 
-        0; Pomocí příkazu create list
+- Stiskni *`Ctrl + J`* k **otevření terminálu** a **vlož** příkaz:
 
+    *`git clone https://vladislavvalek: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@github.com/vladislavvalek/Prg24-26-shared_01.git`*
 
-        Otázka: Jak lze v Pythonu získat délku seznamu my_list? 
-        1; Použitím funkce len(my_list) 
-        0; Použitím funkce size(my_list) 
-        0; Použitím metody my_list.length() 
-        0; Pomocí příkazu list_size(my_list)
+- Vytvoří se složka a pak si jí zase můžete otevřít jako v prvním kroku.
 
+## *A to mám pokaždé toto dělat, když se něco v repositáři změní?*
 
-        Otázka: Co vrátí následující příkaz: print(3 == 3)? 
-        0; True, protože Python vrací vždy ve funkci print hodnotu True. 
-        1; True, protože porovnání čísel je v Pythonu korektní a rovná se. 
-        0; False, protože dvojité rovnítko není správný porovnávací operátor. 
-        0; SyntaxError, protože je potřeba použít === pro porovnání.
+${\color{red}NE}$, pokud máte **otevřený ve vscode** repositář, dají se změny **stáhnout** jednoduchým příkazem:
 
+&emsp;&emsp; *`git pull`*
 
-        Otázka: Co se stane při pokusu o změnu prvku v n-tici (tuple)? Například my_tuple[0] = 10. 
-        0; Prvek v n-tici bude změněn na novou hodnotu. 
-        0; Python přepíše n-tici bez chybové hlášky. 
-        0; Python automaticky vytvoří kopii n-tice. 
-        1; Python vyvolá chybu, protože n-tice jsou neměnné (immutable).
+## *Examinator - projekt - repozitář:*
 
-
-        Otázka: Jakým způsobem lze importovat modul math a použít funkci sqrt pro výpočet druhé odmocniny v Pythonu? 
-        1; import math; math.sqrt(16) 
-        0; from sqrt import math(); sqrt(16) 
-        0; import sqrt.math from math; sqrt(16) 
-        0; include math.sqrt(16)
-
-
-        Otázka: Který z následujících příkazů vytvoří řetězec v Pythonu? 
-        1; 'Hello, World!' 
-        0; Hello, World! 
-        0; 12345 
-        0; ["Hello", "World"]
-
-
-        Otázka: Co se stane při použití příkazu my_list.append(10)? 
-        0; Do seznamu bude vloženo číslo 10 na první pozici. 
-        1; Do seznamu bude přidán prvek 10 na jeho konec. 
-        0; Seznam bude zkopírován a číslo 10 bude přidáno do nové kopie. 
-        0; Python vyvolá chybu, protože pro přidání prvku je potřeba použít add().
+*`git clone https://vladislavvalek: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@github.com/vladislavvalek/Prg24-26_Project_01_Examinator_app.git`*
