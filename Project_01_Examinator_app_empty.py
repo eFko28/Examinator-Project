@@ -1,122 +1,31 @@
-# -*- coding: utf-8 -*-
-# Příliš žluťoučký kůň úpěl ďábelské ódy - testovací pangram
-"""_summary_
-Project_01_Examinator_app.py
-
-* Vytvořte terminálovou aplikaci, která bude čerpat otázky ze souborů z definovaného adresáře.
-* Aplikace zatím nebude využívat OOP, resp. třídy a instance.
-* Aplikaci vložíte jméno a příjmení zkoušeného.
-* Aplikaci lze zadat počet otázek, které budou součástí aktuálního testu.
-* Apliace náhodně vybere otázky, zamíchá jejich odpovědi, zobrazí postupně jednu po druhé, vždy smaže terminál, ať netřeba scrollovat.
-* Aplikace vyhodnotí jednotlivé otázky.
-* Na výstupu bude také počet správně a špatně zodpovězených otázek, procentní úspěšnost.
-* Známka dle procentního rozdělení: <100-90>,(90-75>,(75-60>,(60-45>,(45-0>
-* Možnost v kódu nastavit konstanty pro procentní rozdělení a jiné známkování - na jednom místě.
-* Výsledek se vždy uloží do podadresáře "Vysledky_testu" ve tvaru: "prijmeni_jmeno_20241006_132845_pocetOtazek_znamka.txt"
-* Formát souboru viz níže. 
-* Možnost celý test zopakovat s nově vybranými otázkami ze souborů.
-* U každé otázky bude vždy zobrazen autor a název souboru, ze kterého jsme čerpali.
-* Aplikace hlídá vstupy od uživatele, množství otázek ze souboru a množství otázek v testu.
-
-
-## SOUBOR S VÝSLEDKEM TESTU - definice
-    Výsledek se vždy uloží do podadresáře "Vysledky_testu" 
-    Pojmenování souboru bude ve tvaru: "prijmeni_jmeno_20241006_132845_pocetOtazek_znamka.txt"
-    Uvnitř souboru bude vždy stejná struktura a vyhodnocení jednoho pokusu jednoho testu:
-
-
-## SOUBOR S VÝSLEDKEM TESTU - ukázkový soubor "valek_vladislav_20241006_132845_10_2.txt"
-        Vypracoval/a: Vladislav Válek
-        Otázek v testu: 10
-        Výsledná známka: 2
-        Procentní úspěšnost: 80 %
-        Stupnice: <100-90>,(90-75>,(75-60>,(60-45>,(45-0>
-        Datum a čas vyhodnocení: 6.10.2024, 13:25:45
-
-        ----------------------
-        Chybně zodpovězeno:
-
-        Otázka: Která z následujících možností představuje správnou syntaxi pro definici funkce v Pythonu? 
-        definice funkce my_function(): 
-        function my_function() {} 
-        def my_function(): 
-        fun my_function():
-
-        Otázka: Který z následujících příkazů vytvoří řetězec v Pythonu? 
-        'Hello, World!' 
-        Hello, World! 
-        12345 
-        ["Hello", "World"]
-        ----------------------
-
-
-## SOUBOR S OTÁZKAMI - definice
-Vždy musíte dodržet PŘESNĚ následující strukturu:
-    Na prvním řádku je vždy uveden autor otázek.
-    Každá otázka má před sebou 2x prázdný řádek.
-    Otázka začíná slovem "Otázka:" a zadáním této otázky.
-    Každá odpověď začíná nulou nebo jedničkou se středníkem a mezerou.
-    Počet odpovědí je vždy 4, přitom je právě jedna z nich správná.
-    Odpovědi ani otázky nejsou číslovány ani označeny písmeny - lze je tedy volně zamíchat, včetně míchání odpovědí.
-    Název souboru s otázkami bude pojmenován dle vzoru: "valek_vladislav_otazky_libovolne_pojmenovani.txt"
-    Bude uložen v podadresáři "Testy_zdroj_otazek"
-Počet otázek v souboru bude minimálně 20. Lze jakkoliv využít cokoliv, každý autor ručí za správnost, nespoléhat se na ...
-
-
-## SOUBOR S OTÁZKAMI - ukázkový soubor "valek_vladislav_otazky_albatros.txt"
-        Autor: Vladislav Válek
-
-
-        Otázka: Jakým způsobem se v Pythonu odliší blok řádků kódu, který patří k jedné funkci?
-        0; Blok je uzavřen do trojitých uvozovek.
-        0; Každý řádek začíná otazníkem.
-        1; Všechny řádky jsou odsazeny ideálně o 4 mezery.
-        0; Celý blok je uzavřen do složených závorek.
-
-
-        Otázka: Která z následujících možností představuje správnou syntaxi pro definici funkce v Pythonu? 
-        0; definice funkce my_function(): 
-        0; function my_function() {} 
-        1; def my_function(): 
-        0; fun my_function():
-
-
-        Otázka: Jakým způsobem definujeme seznam v Pythonu? 
-        1; Použitím hranatých závorek: [1, 2, 3] 
-        0; Použitím kulatých závorek: (1, 2, 3) 
-        0; Použitím složených závorek: {1, 2, 3} 
-        0; Pomocí příkazu create list
-"""
-
-
 import os
 import random
 import time
 from datetime import datetime
 
-
-# Globální konstanty a proměnné
-
-GRADE_THRESHOLDS = {
-    1: (90, 100),
-    2: (75, 90),
-    3: (60, 75),
-    4: (45, 60),
-    5: (0, 45)
-}
-
+GRADE_THRESHOLDS = {1: (90, 100), 2: (75, 90), 3: (60, 75), 4: (45, 60), 5: (0, 45)}
 QUESTIONS_FOLDER = "Testy_zdroj_otazek"
-
 RESULTS_FOLDER = "Vysledky_testu"
 
 
 def load_questions_from_directory(directory):
+    """
+    Loads all questions from text files in the specified directory.
+
+    Each file is expected to contain an author line, followed by the questions.
+
+    Args:
+        directory (str): Path to the directory containing question files.
+
+    Returns:
+        list: A list of questions parsed from the files.
+    """
     questions = []
     for filename in os.listdir(directory):
         if filename.endswith(".txt"):
             filepath = os.path.join(directory, filename)
-            with open(filepath, 'r', encoding='utf-8') as file:
-                author = file.readline().strip()
+            with open(filepath, "r", encoding="utf-8") as file:
+                author = file.readline().replace("Autor: ", "").strip()
                 content = file.read().strip()
                 questions_in_file = parse_questions(content, author, filename)
                 questions.extend(questions_in_file)
@@ -124,40 +33,40 @@ def load_questions_from_directory(directory):
 
 
 def parse_questions(content, author, filename):
+    """
+    Parses the content of a file into individual questions.
+
+    Args:
+        content (str): The text content of the file.
+        author (str): Author of the questions.
+        filename (str): Name of the file the questions were sourced from.
+
+    Returns:
+        list: A list of question dictionaries with metadata.
+    """
     questions = []
     blocks = content.split("\n\n\n")
     for block in blocks:
         lines = block.strip().split("\n")
         if len(lines) >= 5 and lines[0].startswith("Otázka:"):
             question = {
-                'question': lines[0].replace("Otázka:", "").strip(),
-                'answers': [line[3:].strip() for line in lines[1:5]],
-                'correct_answer': next(i for i, line in enumerate(lines[1:5]) if line.startswith("1;")),
-                'author': author,
-                'file': filename
+                "question": lines[0].replace("Otázka:", "").strip(),
+                "answers": [line[3:].strip() for line in lines[1:5]],
+                "correct_answer": next(i for i, line in enumerate(lines[1:5]) if line.startswith("1;")),
+                "author": author,
+                "file": filename,
             }
             questions.append(question)
     return questions
 
 
-def shuffle_questions(question):
-    answers = question["answers"]
-    correct_answer_index = question["correct_answer"]
-
-    indices = list(range(len(answers)))
-    random.shuffle(indices)
-
-    new_answers = [answers[i] for i in indices]
-
-    new_correct_answer_index = indices.index(correct_answer_index)
-
-    question["answers"] = new_answers
-    question["correct_answer"] = new_correct_answer_index
-    return question
-
-
-
 def get_user_name():
+    """
+    Prompts the user to enter their first and last name.
+
+    Returns:
+        tuple: A tuple containing the first name and last name as strings.
+    """
     first_name = input("Zadejte své jméno: ")
     last_name = input("Zadejte své příjmení: ")
 
@@ -165,6 +74,17 @@ def get_user_name():
 
 
 def get_number_of_questions(max_questions):
+    """
+    Prompts the user to select the number of questions for the test.
+
+    Ensures the number is within the valid range.
+
+    Args:
+        max_questions (int): The maximum number of questions available.
+
+    Returns:
+        int: The number of questions chosen by the user.
+    """
     while True:
         try:
             number_of_questions = int(input(f"S kolika otázkami si přejete pracovat? max({max_questions}): "))
@@ -176,101 +96,139 @@ def get_number_of_questions(max_questions):
             print("Prosím zadejte platné číslo.")
 
 
-
 def ask_question(question, index):
+    """
+    Presents a question to the user and checks their answer.
+
+    Args:
+        question (dict): The question dictionary containing text, answers, and metadata.
+        index (int): The index of the current question.
+
+    Returns:
+        bool: True if the user's answer is correct, False otherwise.
+    """
     os.system("cls")
 
-    print(f"Autor: {question["author"]}, Zdroj: {question["file"]}")
-    print(f"\nOtázka: {question["question"]}")
-    
-    for i, answer in enumerate(question["answer"]):
+    print(f"Autor: {question['author']}, Zdroj: {question['file']}")
+    print(f"\nOtázka: {question['question']}")
+
+    for i, answer in enumerate(question["answers"]):
         print(f"{i + 1}. {answer}")
 
     while True:
         try:
             user_answer = int(input("Zadejte číslo správné odpovědi: ")) - 1
-            if 0 <= user_answer < len(question['answers']):
-                return user_answer == question['correct_answer']
+            if 0 <= user_answer < len(question["answers"]):
+                return user_answer == question["correct_answer"]
             else:
                 print(f"Zadejte číslo v rozsahu 1 až {len(question['answers'])}.")
         except ValueError:
             print("Prosím zadejte platné číslo.")
 
-def calculate_grade(score, max_questions):
-    percentage = (score / max_questions) * 100
 
-    
-    for grade, (lower, upper) in GRADE_THRESHOLDS.items():
-        if lower <= percentage < upper:
-            return grade
-        
-def save_test_result(first_name, last_name, total_questions, percentage, grade, success_rate, wrong_answers):
-    
+def calculate_grade(score, total_questions):
+    """
+    Calculates the grade based on the user's score.
 
+    Args:
+        score (int): The number of correctly answered questions.
+        total_questions (int): The total number of questions.
+
+    Returns:
+        tuple: A tuple containing the grade (int) and percentage (float).
+    """
+    percentage = (score / total_questions) * 100
+    for grade, (min_percent, max_percent) in GRADE_THRESHOLDS.items():
+        if min_percent <= percentage <= max_percent:
+            return grade, percentage
+    return 5, percentage
+
+
+def save_test_result(first_name, last_name, total_questions, percentage, grade, wrong_answers):
+    """
+    Saves the user's test results to a file.
+
+    Args:
+        first_name (str): User's first name.
+        last_name (str): User's last name.
+        total_questions (int): Total number of questions in the test.
+        percentage (float): User's percentage score.
+        grade (int): Final grade.
+        wrong_answers (list): List of incorrectly answered questions.
+
+    Returns:
+        None
+    """
     time = datetime.now().strftime("%Y%m%d_%H%M%S")
 
     filename_result = f"{last_name}_{first_name}_{time}_{total_questions}_{grade}.txt"
     filepath = os.path.join(RESULTS_FOLDER, filename_result)
 
     with open(filepath, "w", encoding="utf-8") as file:
-        file.write(f"Vypracoval/a: {first_name} {last_name}")
-        file.write(f"Otázek v testu: {total_questions}")
-        file.write(f"Výsledná známka: {grade}")
-        file.write(f"Procentní úspěšnost: {percentage}")
-        file.write(f"Stupnice: {GRADE_THRESHOLDS}")
-        file.write(f"Datum a čas vyhodnocení: {datetime.now().strftime("%d.%m.%Y, %H:%M:%S")}\n")
+        file.write(f"Vypracoval/a: {first_name} {last_name}\n")
+        file.write(f"Otázek v testu: {total_questions}\n")
+        file.write(f"Výsledná známka: {grade}\n")
+        file.write(f"Procentní úspěšnost: {percentage:.2f}%\n")
+        file.write(f"Stupnice: {GRADE_THRESHOLDS}\n")
+        file.write(f"Datum a čas vyhodnocení: {datetime.now().strftime('%d.%m.%Y, %H:%M:%S')}\n")
 
-    if wrong_answers != "":
+        if wrong_answers:
             file.write("\n----------------------\nChybně zodpovězeno:\n")
             for question in wrong_answers:
                 file.write(f"\nOtázka: {question['question']}\n")
-                for answer in question['answers']:
+                for answer in question["answers"]:
                     file.write(f"{answer}\n")
 
+
 def run_examinator():
+    """
+    Runs the main exam logic, including user interaction, question presentation, and result saving.
+
+    Returns:
+        None
+    """
     first_name, last_name = get_user_name()
 
     questions = load_questions_from_directory(QUESTIONS_FOLDER)
-
     number_of_questions = get_number_of_questions(len(questions))
 
     selected_questions = random.sample(questions, number_of_questions)
-    for question in selected_questions:
-        shuffle_questions(question)
 
     score = 0
     wrong_answers = []
 
-    
     for i, question in enumerate(selected_questions):
         if ask_question(question, i):
             score += 1
         else:
             wrong_answers.append(question)
-    
-    
-    grade, percentage = calculate_grade(score, number_of_questions)
-    
 
-    
+    grade, percentage = calculate_grade(score, number_of_questions)
+
     print("\nTest dokončen!")
     print(f"Správně: {score}/{number_of_questions}")
     print(f"Procentní úspěšnost: {round(percentage, 2)}%")
     print(f"Výsledná známka: {grade}")
 
-    
-    save_test_result(first_name, last_name, number_of_questions, score, grade, percentage, wrong_answers)
+    save_test_result(first_name, last_name, number_of_questions, percentage, grade, wrong_answers)
 
 
 ##############################################################
 ### Spuštění programu - MAIN
-
 if __name__ == "__main__":
-
-    os.system('clear' if os.name == 'posix' else 'cls')
+    os.system("clear" if os.name == "posix" else "cls")
     while True:
         run_examinator()
-        repeat = input("Chcete test zopakovat? (Y/n): ").lower()
-        if repeat != "y":
-            break
 
+        while True:
+            try:
+                repeat = input("Chcete test zopakovat? (Y/n): ").lower()
+
+                if repeat == "y":
+                    break
+                elif repeat == "n":
+                    exit(0)
+                else:
+                    raise ValueError
+            except ValueError:
+                print("Zadejte platný vstup (Y/n): ")

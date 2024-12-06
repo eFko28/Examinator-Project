@@ -1,0 +1,106 @@
+Autor: Josef Kovář
+
+
+Otázka: Jaký je správný způsob zápisu podmíněného příkazu v Pythonu?
+0; if podmínka
+0; if podmínka then
+1; if podmínka:
+0; when podmínka:
+
+
+Otázka: Co znamená klíčové slovo elif v Pythonu?
+1; Zkrácená forma pro else if.
+0; Způsob, jak ukončit cyklus.
+0; Speciální podmínka na konec.
+0; Klíčové slovo pro přerušení programu.
+
+
+Otázka: Jaký typ cyklu se v Pythonu používá pro iteraci přes seznam?
+1; for
+0; while
+0; repeat
+0; loop
+
+
+Otázka: Co se stane, pokud je v cyklu for použito klíčové slovo break?
+1; Cyklus se okamžitě ukončí.
+0; Cyklus přejde k další iteraci.
+0; Program se ukončí.
+0; Způsobí chybu.
+
+
+Otázka: Co dělá funkce range(5)?
+1; Generuje posloupnost čísel od 0 do 4.
+0; Generuje posloupnost čísel od 1 do 5.
+0; Generuje pět náhodných čísel.
+0; Generuje pouze číslo 5.
+
+
+Otázka: Co je potřeba zajistit při použití cyklu while?
+1; Podmínka musí být správně navržena, aby cyklus neskončil nekonečně.
+0; Proměnná musí být vždy integer.
+0; Funkce break musí být použita.
+0; Cyklus musí obsahovat continue.
+
+
+Otázka: Které klíčové slovo lze použít k přeskočení aktuální iterace cyklu?
+1; continue
+0; break
+0; pass
+0; skip
+
+
+Otázka: Co se stane, pokud chybí blok else v podmínce?
+1; Program pokračuje, pokud žádná podmínka není splněna.
+0; Vyvolá chybu.
+0; Vždy se spustí první podmínka.
+0; Blok if nebude fungovat.
+
+
+Otázka: Jak zapisujeme více podmínek v jednom příkazu if?
+0; if podmínka a podmínka
+1; if podmínka and podmínka
+0; if podmínka && podmínka
+0; if podmínka || podmínka
+
+
+Otázka: Jak přidáme krokování do funkce range?
+1; range(start, stop, step)
+0; range(start, stop - 1)
+0; range(start, stop, krok)
+0; range(krok, stop, start)
+
+
+Otázka: Co udělá klíčové slovo continue v cyklu?
+1; Přeskočí aktuální iteraci a pokračuje další.
+0; Ukončí celý cyklus.
+0; Zastaví iteraci navždy.
+0; Vyvolá chybu.
+
+
+Otázka: Jak můžeme iterovat přes slovník?
+0; for key in dict:
+1; for key, value in dict.items():
+0; for key, value in dict:
+0; for dict.items():
+
+
+Otázka: Jak zjistíme délku seznamu my_list?
+1; Pomocí len(my_list)
+0; Pomocí size(my_list)
+0; Pomocí count(my_list)
+0; Pomocí length(my_list).
+
+
+Otázka: Co se stane, pokud podmínka cyklu while není nikdy splněna?
+0; Cyklus se spustí jednou.
+0; Vyvolá chybu SyntaxError.
+1; Cyklus se nikdy nespustí.
+0; Cyklus vždy proběhne alespoň jednou.
+
+
+Otázka: Co dělá metoda append u seznamu?
+1; Přidá prvek na konec seznamu.
+0; Odstraní prvek ze seznamu.
+0; Přidá prvek na začátek seznamu.
+0; Seznam vyprázdní.
