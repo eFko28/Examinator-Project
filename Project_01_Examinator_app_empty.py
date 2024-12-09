@@ -228,7 +228,5 @@ if __name__ == "__main__":
                     break
                 elif repeat == "n":
                     exit(0)
-                else:
-                    raise ValueError
             except ValueError:
                 print("Zadejte platný vstup (Y/n): ")
