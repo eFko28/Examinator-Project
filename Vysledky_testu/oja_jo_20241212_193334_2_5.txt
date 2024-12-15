@@ -1,0 +1,21 @@
+Vypracoval/a: jo oja
+Otázek v testu: 2
+Výsledná známka: 5
+Procentní úspěšnost: 0.00%
+Stupnice: {1: (90, 100), 2: (75, 90), 3: (60, 75), 4: (45, 60), 5: (0, 45)}
+Datum a čas vyhodnocení: 12.12.2024, 19:33:34
+
+----------------------
+Chybně zodpovězeno:
+
+Otázka: Co dělá metoda append u seznamu?
+Přidá prvek na konec seznamu.
+Odstraní prvek ze seznamu.
+Přidá prvek na začátek seznamu.
+Seznam vyprázdní.
+
+Otázka: Jak zjistíme délku seznamu my_list?
+Pomocí len(my_list)
+Pomocí size(my_list)
+Pomocí count(my_list)
+Pomocí length(my_list).

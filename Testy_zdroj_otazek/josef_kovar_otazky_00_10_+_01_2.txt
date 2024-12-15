@@ -1,0 +1,106 @@
+Autor: Josef Kovář
+
+
+Otázka: Jakým způsobem se v Pythonu odliší blok řádků kódu, který patří k jedné funkci?
+0; Blok je uzavřen do trojitých uvozovek.
+0; Každý řádek začíná otazníkem.
+1; Všechny řádky jsou odsazeny ideálně o 4 mezery.
+0; Celý blok je uzavřen do složených závorek.
+
+
+Otázka: Která z následujících možností představuje správnou syntaxi pro definici funkce v Pythonu?
+0; definice funkce my_function():
+0; function my_function() {}
+1; def my_function():
+0; fun my_function():
+
+
+Otázka: Jakým způsobem definujeme seznam v Pythonu?
+1; Použitím hranatých závorek: [1, 2, 3]
+0; Použitím kulatých závorek: (1, 2, 3)
+0; Použitím složených závorek: {1, 2, 3}
+0; Pomocí příkazu create list
+
+
+Otázka: Jak lze v Pythonu získat délku seznamu my_list?
+1; Použitím funkce len(my_list)
+0; Použitím funkce size(my_list)
+0; Použitím metody my_list.length()
+0; Pomocí příkazu list_size(my_list)
+
+
+Otázka: Co vrátí následující příkaz: print(3 == 3)?
+0; True, protože Python vrací vždy ve funkci print hodnotu True.
+1; True, protože porovnání čísel je v Pythonu korektní a rová se.
+0; False, protože dvojité rovnítko není správný porovnávací operátor.
+0; SyntaxError, protože je potřeba použít === pro porovnání.
+
+
+Otázka: Co se stane při pokusu o změnu prvku v n-tici (tuple)? Například my_tuple[0] = 10.
+0; Prvek v n-tici bude změněn na novou hodnotu.
+0; Python přepíše n-tici bez chybové hlášky.
+0; Python automaticky vytvoří kopii n-tice.
+1; Python vyvolá chybu, protože n-tice jsou neměnné (immutable).
+
+
+Otázka: Jakým způsobem lze importovat modul math a použít funkci sqrt pro výpočet druhé odmocniny v Pythonu?
+1; import math; math.sqrt(16)
+0; from sqrt import math(); sqrt(16)
+0; import sqrt.math from math; sqrt(16)
+0; include math.sqrt(16)
+
+
+Otázka: Který z následujících příkazů vytvoří řetězec v Pythonu?
+1; 'Hello, World!'
+0; Hello, World!
+0; 12345
+0; ["Hello", "World"]
+
+
+Otázka: Co se stane při použití příkazu my_list.append(10)?
+0; Do seznamu bude vloženo číslo 10 na první pozici.
+1; Do seznamu bude přidán prvek 10 na jeho konec.
+0; Seznam bude zkopírován a číslo 10 bude přidáno do nové kopie.
+0; Python vyvolá chybu, protože pro přidání prvku je potřeba použít add().
+
+
+Otázka: Jak lze v Pythonu porovnat, zda číslo x je větší než y a současně menší než z?
+1; Použitím řetězového porovnání: y < x < z
+0; Použitím logického operátoru nebo: x > y or x < z
+0; Použitím příkazu compare(x, y, z)
+0; Tuto kontrolu nelze v Pythonu provést.
+
+
+Otázka: Jaký bude výsledek výrazu 5 and 0 v Pythonu?
+0; 5, protože první hodnota vždy určuje výsledek.
+0; True, protože oba operandy jsou interpretovány jako „pravda“.
+1; 0, protože logický operátor and vrací první nepravdivou hodnotu.
+0; SyntaxError, protože logické operace nelze použít s čísly.
+
+
+Otázka: Co vrátí výsledek výrazu not (4 > 3)?
+1; False, protože operátor not invertuje pravdivost výrazu.
+0; True, protože Python vyhodnocuje pouze kladná čísla jako pravdivá.
+0; SyntaxError, protože not není platný operátor.
+0; 0, protože Python vrací číselné hodnoty pro logické výrazy.
+
+
+Otázka: Jaký bude výsledek výrazu 3 < 5 < 7 v Pythonu?
+1; True, protože řetězové porovnání kontroluje každý vztah zvlášť.
+0; False, protože Python neumí řetězit porovnání.
+0; SyntaxError, protože nelze použít dva porovnávací operátory za sebou.
+0; 7, protože Python vrací poslední hodnotu výrazu.
+
+
+Otázka: Co se stane, pokud použiji příkaz x = [1, 2, 3] * 2?
+1; Python vytvoří seznam [1, 2, 3, 1, 2, 3].
+0; Python vyvolá chybu, protože seznam nelze násobit celým číslem.
+0; Python zdvojí hodnoty v seznamu na [2, 4, 6].
+0; Python vytvoří kopii seznamu, ale nepřidá čalouné prvky.
+
+
+Otázka: Jakým způsobem může Python interpretovat neexistující klíč při použití slovníku (dictionary)?
+1; Vyvolá chybu KeyError.
+0; Vrátí hodnotu None bez vyvolání chyby.
+0; Automaticky vytvoří nový klíč s hodnotou 0.
+0; Použije poslední přidanou hodnotu do slovníku.

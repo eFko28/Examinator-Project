@@ -1,0 +1,21 @@
+Vypracoval/a: adhad ajv
+Otázek v testu: 3
+Výsledná známka: 5
+Procentní úspěšnost: 33.33%
+Stupnice: {1: (90, 100), 2: (75, 90), 3: (60, 75), 4: (45, 60), 5: (0, 45)}
+Datum a čas vyhodnocení: 12.12.2024, 19:33:44
+
+----------------------
+Chybně zodpovězeno:
+
+Otázka: Co dělá funkce range(5)?
+Generuje posloupnost čísel od 0 do 4.
+Generuje posloupnost čísel od 1 do 5.
+Generuje pět náhodných čísel.
+Generuje pouze číslo 5.
+
+Otázka: Co je potřeba zajistit při použití cyklu while?
+Podmínka musí být správně navržena, aby cyklus neskončil nekonečně.
+Proměnná musí být vždy integer.
+Funkce break musí být použita.
+Cyklus musí obsahovat continue.

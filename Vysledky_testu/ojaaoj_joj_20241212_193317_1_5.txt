@@ -1,0 +1,15 @@
+Vypracoval/a: joj ojaaoj
+Otázek v testu: 1
+Výsledná známka: 5
+Procentní úspěšnost: 0.00%
+Stupnice: {1: (90, 100), 2: (75, 90), 3: (60, 75), 4: (45, 60), 5: (0, 45)}
+Datum a čas vyhodnocení: 12.12.2024, 19:33:17
+
+----------------------
+Chybně zodpovězeno:
+
+Otázka: Co se stane, pokud podmínka cyklu while není nikdy splněna?
+Cyklus se spustí jednou.
+Vyvolá chybu SyntaxError.
+Cyklus se nikdy nespustí.
+Cyklus vždy proběhne alespoň jednou.

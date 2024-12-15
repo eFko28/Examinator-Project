@@ -1,0 +1,15 @@
+Vypracoval/a: Josef Kovář
+Otázek v testu: 3
+Výsledná známka: 3
+Procentní úspěšnost: 66.67%
+Stupnice: {1: (90, 100), 2: (75, 90), 3: (60, 75), 4: (45, 60), 5: (0, 45)}
+Datum a čas vyhodnocení: 12.12.2024, 19:31:27
+
+----------------------
+Chybně zodpovězeno:
+
+Otázka: Jaký je správný způsob zápisu podmíněného příkazu v Pythonu?
+if podmínka
+if podmínka then
+if podmínka:
+when podmínka:
