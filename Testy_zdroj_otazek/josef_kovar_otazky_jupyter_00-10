@@ -1,0 +1,57 @@
+Autor: Josef Kovář
+
+
+Otázka: Jakým způsobem lze přistoupit k hodnotě ve slovníku pomocí klíče?
+1; Pomocí syntaxe dictionary[key]
+0; Pomocí syntaxe dictionary.key
+0; Použitím funkce getValue(dictionary, key)
+0; Použitím operátoru ->
+
+
+Otázka: Která z těchto datových struktur je neměnná?
+1; Tuple (n-tice)
+0; List (seznam)
+0; Dictionary (slovník)
+0; Set (množina)
+
+
+Otázka: Jaká je hodnota výrazu len({1, 2, 2, 3})?
+1; 3
+0; 4
+0; 2
+0; SyntaxError
+
+
+Otázka: Jaký bude výsledek výrazu [1, 2, 3] + [4, 5]?
+1; [1, 2, 3, 4, 5]
+0; [1, 2, 3, [4, 5]]
+0; SyntaxError
+0; [5, 4, 3, 2, 1]
+
+
+Otázka: Jakým způsobem lze odstranit prvek ze seznamu my_list na konkrétním indexu?
+1; Použitím příkazu my_list.pop(index)
+0; Použitím příkazu del my_list(index)
+0; Použitím metody my_list.remove(index)
+0; Použitím příkazu my_list.delete(index)
+
+
+Otázka: Co vrátí výraz "Python".lower()?
+1; "python"
+0; "Python"
+0; "PYTHON"
+0; SyntaxError
+
+
+Otázka: Jakým způsobem lze převést seznam [1, 2, 3] na množinu?
+1; Použitím funkce set([1, 2, 3])
+0; Použitím funkce convert_to_set([1, 2, 3])
+0; Použitím metody [1, 2, 3].to_set()
+0; Seznam nelze převést na množinu
+
+
+Otázka: Jaký datový typ vrátí funkce type(42)?
+1; <class 'int'>
+0; <class 'str'>
+0; <class 'float'>
+0; <class 'dict'>

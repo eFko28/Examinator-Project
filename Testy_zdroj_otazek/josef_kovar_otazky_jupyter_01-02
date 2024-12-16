@@ -1,0 +1,50 @@
+Autor: Josef Kovář
+
+
+Otázka: Jaký bude výsledek výrazu 3 < 4 and 4 < 5?
+1; True
+0; False
+0; SyntaxError
+0; None
+
+
+Otázka: Co vrátí výraz not (5 > 3)?
+1; False
+0; True
+0; SyntaxError
+0; 0
+
+
+Otázka: Který z těchto operátorů představuje logický součin (AND)?
+1; and
+0; &&
+0; &
+0; *
+
+
+Otázka: Jaký bude výsledek výrazu 10 > 5 > 2?
+1; True
+0; False
+0; SyntaxError
+0; None
+
+
+Otázka: Co vrátí následující porovnání: 5 == 5 or 5 != 5?
+1; True
+0; False
+0; SyntaxError
+0; None
+
+
+Otázka: Jak lze pomocí řetězcového porovnání ověřit, že x je mezi 10 a 20?
+1; 10 < x < 20
+0; x > 10 and < 20
+0; 10 < x and x < 20
+0; compare(10, x, 20)
+
+
+Otázka: Co znamená logický výraz (4 > 3) and (2 < 1)?
+1; Vyhodnotí se jako False, protože jedna z podmínek je nepravdivá
+0; Vyhodnotí se jako True, protože první podmínka je pravdivá
+0; Vyhodnotí se jako SyntaxError, protože nelze kombinovat dvě podmínky
+0; Python vrátí 1 jako logický výsledek
